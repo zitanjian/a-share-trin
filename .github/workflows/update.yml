@@ -32,7 +32,7 @@ jobs:
 
       - name: 拉取数据
         env:
-          TUSHARE_TOKEN: d695f83aa78178d2180990873b13903b0e41c387904f43eb7f82e2f5
+          TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
         run: jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 pull_data.ipynb
 
       - name: 出图并更新 README
